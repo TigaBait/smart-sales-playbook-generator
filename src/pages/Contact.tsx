@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Mail, Phone, Calendar, Send } from "lucide-react";
@@ -65,6 +64,8 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      console.log("Submitting form data:", data);
+      
       // Step 1: Store the submission in Supabase
       const { error: dbError } = await supabase
         .from("contact_submissions")
@@ -78,24 +79,37 @@ const Contact = () => {
         });
 
       if (dbError) {
+        console.error("Database error:", dbError);
         throw new Error(dbError.message);
       }
 
+      console.log("Successfully saved to database, now sending email");
+
       // Step 2: Send email notification via Edge Function
-      const response = await supabase.functions.invoke("send-contact-email", {
-        body: {
+      const response = await fetch("https://lsjspjfbpchfbngefhdw.supabase.co/functions/v1/send-contact-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${supabase.supabaseKey}`,
+        },
+        body: JSON.stringify({
           name: data.name,
           company: data.company,
           email: data.email,
           phone: data.phone || "",
           service: data.service,
           message: data.message,
-        },
+        }),
       });
 
-      if (!response.data?.success) {
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Email API error:", errorData);
         throw new Error("Failed to send email notification");
       }
+      
+      const responseData = await response.json();
+      console.log("Email sent response:", responseData);
       
       // Success notification
       toast({
