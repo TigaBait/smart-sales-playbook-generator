@@ -228,7 +228,7 @@ const WhyUs = () => {
         <div className="container-custom">
           <SectionHeading
             title="Meet the Expert"
-            subtitle="[Placeholder for founder/team bio - this section will be updated with specific information about the expertise and background of the Smart Sales Process team.]"
+            subtitle=""
             centered
           />
           
@@ -237,17 +237,17 @@ const WhyUs = () => {
               <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4">
                 {/* Placeholder for founder/expert photo */}
               </div>
-              <h3 className="text-2xl font-bold text-navy-900">[Founder Name]</h3>
+              <h3 className="text-2xl font-bold text-navy-900">Yon A. Vo</h3>
               <p className="text-navy-600">Founder & Lead Sales Strategist</p>
             </div>
             
             <div className="max-w-3xl mx-auto">
               <p className="text-navy-700 mb-4">
-                [Placeholder for founder bio - With over 15 years of experience in sales leadership and technology implementation, our founder has helped dozens of small businesses and startups transform their sales processes and leverage cutting-edge tools to drive growth.]
+                With over 15 years of experience in sales leadership and technology implementation, our founder has helped dozens of small businesses and startups transform their sales processes and leverage cutting-edge tools to drive growth.
               </p>
               
               <p className="text-navy-700 mb-6">
-                [Additional background information - Prior to founding Smart Sales Process, they led sales teams at both fast-growing startups and established technology companies, giving them unique insight into what works across different environments and stages of growth.]
+                Prior to founding Smart Sales Process, they led sales teams at both fast-growing startups and established technology companies, giving them unique insight into what works across different environments and stages of growth.
               </p>
               
               <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
