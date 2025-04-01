@@ -1,7 +1,7 @@
 
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Target, BookOpen, MessageSquare, Shield, BarChart3, FileCheck, Tool, PieChart } from "lucide-react";
+import { ArrowRight, Users, Target, BookOpen, MessageSquare, Shield, BarChart3, FileCheck, Wrench, PieChart } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 import SectionHeading from "@/components/common/SectionHeading";
 import CallToAction from "@/components/common/CallToAction";
@@ -46,7 +46,7 @@ const SalesPlaybook = () => {
     {
       title: "Tools & Resources",
       description: "Templates, scripts, and assets to support sales activities",
-      icon: Tool
+      icon: Wrench
     },
     {
       title: "KPIs & Goals",
