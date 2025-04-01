@@ -161,7 +161,7 @@ const Insights = () => {
         title="Stay Updated with Our Latest Insights"
         subtitle="Subscribe to our newsletter to receive the latest articles, tips, and resources directly in your inbox."
         buttonText="Subscribe Now"
-        buttonLink="#"
+        buttonLink=""
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />
