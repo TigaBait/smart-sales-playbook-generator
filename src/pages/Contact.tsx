@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Mail, Phone, Calendar, Send, AlertCircle } from "lucide-react";
+import { Mail, Phone, Calendar, Send } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -57,7 +57,7 @@ const Contact = () => {
       phone: "",
       service: "",
       message: "",
-      privacy: false,
+      privacy: false as true, // Type assertion to fix TypeScript error
     },
   });
 
@@ -66,14 +66,16 @@ const Contact = () => {
     
     try {
       // Step 1: Store the submission in Supabase
-      const { error: dbError } = await supabase.from("contact_submissions").insert({
-        name: data.name,
-        company: data.company,
-        email: data.email,
-        phone: data.phone || null,
-        service: data.service,
-        message: data.message,
-      });
+      const { error: dbError } = await supabase
+        .from("contact_submissions")
+        .insert({
+          name: data.name,
+          company: data.company,
+          email: data.email,
+          phone: data.phone || null,
+          service: data.service,
+          message: data.message,
+        });
 
       if (dbError) {
         throw new Error(dbError.message);
