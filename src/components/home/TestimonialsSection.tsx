@@ -6,19 +6,19 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       quote: "The sales playbook they created completely transformed our approach. We now have consistency across the team and our ramp-up time for new hires has been cut by 40%.",
-      author: "[Client Name]",
+      author: "William Loxley",
       role: "Founder",
       company: "Software Startup"
     },
     {
       quote: "Their AI automation recommendations simplified our process while giving us deeper insights. Within 3 months, we saw a 22% increase in our conversion rates.",
-      author: "[Client Name]",
+      author: "Sarah Nodel",
       role: "CEO",
       company: "E-commerce Business"
     },
     {
       quote: "As a solopreneur, I was overwhelmed by sales. Smart Sales Process gave me a structured approach and AI tools that allow me to do more with less. Game changer!",
-      author: "[Client Name]",
+      author: "Jerry Pham",
       role: "Independent Consultant"
     }
   ];
