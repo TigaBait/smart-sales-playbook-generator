@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Mail, Phone, Calendar, Send } from "lucide-react";
@@ -86,11 +87,14 @@ const Contact = () => {
       console.log("Successfully saved to database, now sending email");
 
       // Step 2: Send email notification via Edge Function
+      // Fix: Use fetch with proper authorization
+      const { data: authData } = await supabase.auth.getSession();
+      
       const response = await fetch("https://lsjspjfbpchfbngefhdw.supabase.co/functions/v1/send-contact-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${supabase.supabaseKey}`,
+          "Authorization": `Bearer ${authData.session?.access_token || ''}`,
         },
         body: JSON.stringify({
           name: data.name,
