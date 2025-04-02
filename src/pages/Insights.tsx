@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -11,7 +10,7 @@ const Insights = () => {
       id: "signs-need-sales-playbook",
       title: "5 Signs Your Startup Needs a Sales Playbook Now",
       excerpt: "Is your sales process inconsistent? Are new hires taking too long to ramp up? Learn the key indicators that it's time to create a structured sales playbook for your business.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
       date: "June 15, 2023",
       author: "Smart Sales Process",
       category: "Sales Playbooks"
@@ -20,7 +19,7 @@ const Insights = () => {
       id: "decoding-ai-for-sales",
       title: "Decoding AI for Sales: Where Small Businesses Should Start",
       excerpt: "Confused about how to implement AI in your sales process? This guide breaks down the most practical first steps for small businesses looking to leverage AI without breaking the bank.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       date: "July 22, 2023",
       author: "Smart Sales Process",
       category: "AI Automation"
@@ -29,7 +28,7 @@ const Insights = () => {
       id: "essential-components-playbook",
       title: "The Essential Components of a Sales Playbook That Actually Gets Used",
       excerpt: "Many sales playbooks gather dust. Learn the key components that create a sales playbook your team will actually reference and apply in their daily selling activities.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       date: "August 10, 2023",
       author: "Smart Sales Process",
       category: "Sales Playbooks"
@@ -38,7 +37,7 @@ const Insights = () => {
       id: "avoiding-ai-implementation-pitfalls",
       title: "Avoiding the Pitfalls: Common Mistakes When Implementing Sales AI",
       excerpt: "Learn the most common mistakes businesses make when adopting AI sales tools and how to avoid them to ensure successful implementation and ROI.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
       date: "September 5, 2023",
       author: "Smart Sales Process",
       category: "AI Automation"
@@ -47,7 +46,7 @@ const Insights = () => {
       id: "choose-right-ai-tools",
       title: "How to Choose the Right AI Sales Tools for Your Budget",
       excerpt: "With hundreds of AI sales tools on the market, how do you select the right ones for your specific needs and budget constraints? This guide will help you navigate the options.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       date: "October 14, 2023",
       author: "Smart Sales Process",
       category: "AI Automation"
@@ -56,7 +55,7 @@ const Insights = () => {
       id: "quantifying-roi-sales-tech",
       title: "Quantifying the ROI of Sales Playbooks & Automation",
       excerpt: "How do you measure the impact of your sales enablement investments? Learn the key metrics to track and how to calculate the true ROI of your sales playbooks and AI tools.",
-      image: "/placeholder.svg",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
       date: "November 8, 2023",
       author: "Smart Sales Process",
       category: "Strategy"
@@ -71,8 +70,6 @@ const Insights = () => {
     "Best Practices"
   ];
 
-  // Since we don't have actual blog post pages built yet, let's create a handler
-  // that prevents default behavior and shows a message
   const handleReadMoreClick = (e) => {
     e.preventDefault();
     alert("Full blog post coming soon! This feature is under development.");
@@ -93,14 +90,15 @@ const Insights = () => {
       <section className="section">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Main Content */}
             <div className="flex-grow">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {blogPosts.map((post) => (
                   <article key={post.id} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col animate-on-scroll">
-                    <div className="bg-navy-50 h-48 flex items-center justify-center">
-                      <span className="text-navy-300 text-lg">Blog Preview Image</span>
-                    </div>
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-48 object-cover"
+                    />
                     <div className="p-6 flex-grow">
                       <div className="flex justify-between items-center mb-3">
                         <span className="text-xs font-medium bg-teal-50 text-teal-700 px-2 py-1 rounded">
@@ -128,7 +126,6 @@ const Insights = () => {
               </div>
             </div>
             
-            {/* Sidebar */}
             <div className="md:w-72 lg:w-80">
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 sticky top-24">
                 <div className="mb-6">
