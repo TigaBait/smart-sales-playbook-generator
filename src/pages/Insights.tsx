@@ -1,7 +1,7 @@
 
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, User } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 import CallToAction from "@/components/common/CallToAction";
 
@@ -71,6 +71,13 @@ const Insights = () => {
     "Best Practices"
   ];
 
+  // Since we don't have actual blog post pages built yet, let's create a handler
+  // that prevents default behavior and shows a message
+  const handleReadMoreClick = (e) => {
+    e.preventDefault();
+    alert("Full blog post coming soon! This feature is under development.");
+  };
+
   return (
     <>
       <Helmet>
@@ -91,11 +98,9 @@ const Insights = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {blogPosts.map((post) => (
                   <article key={post.id} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col animate-on-scroll">
-                    <img 
-                      src={post.image} 
-                      alt={post.title} 
-                      className="w-full h-48 object-cover" 
-                    />
+                    <div className="bg-navy-50 h-48 flex items-center justify-center">
+                      <span className="text-navy-300 text-lg">Blog Preview Image</span>
+                    </div>
                     <div className="p-6 flex-grow">
                       <div className="flex justify-between items-center mb-3">
                         <span className="text-xs font-medium bg-teal-50 text-teal-700 px-2 py-1 rounded">
@@ -109,13 +114,13 @@ const Insights = () => {
                       <h2 className="text-xl font-bold text-navy-900 mb-3 line-clamp-2">{post.title}</h2>
                       <p className="text-navy-600 mb-4 line-clamp-3">{post.excerpt}</p>
                       <div className="mt-auto">
-                        <Link
-                          to={`/insights/${post.id}`}
+                        <button
+                          onClick={handleReadMoreClick}
                           className="inline-flex items-center text-teal-600 font-medium hover:text-teal-700 transition-colors"
                         >
                           Read more
                           <ArrowRight size={16} className="ml-1" />
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -131,9 +136,12 @@ const Insights = () => {
                   <ul className="space-y-2">
                     {categories.map((category, index) => (
                       <li key={index}>
-                        <a href="#" className="text-navy-700 hover:text-teal-600 transition-colors">
+                        <button 
+                          onClick={() => alert(`Filter by ${category} coming soon!`)}
+                          className="text-navy-700 hover:text-teal-600 transition-colors"
+                        >
                           {category}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
