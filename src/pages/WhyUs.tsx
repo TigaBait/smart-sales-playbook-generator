@@ -1,54 +1,35 @@
-
 import { Helmet } from "react-helmet-async";
 import { Shield, Gauge, UserCheck, Zap, CheckCircle, Target } from "lucide-react";
 import PageHeader from "@/components/common/PageHeader";
 import SectionHeading from "@/components/common/SectionHeading";
 import FeatureCard from "@/components/common/FeatureCard";
 import CallToAction from "@/components/common/CallToAction";
-
 const WhyUs = () => {
-  const coreValues = [
-    {
-      title: "Holistic Approach",
-      description: "We combine foundational sales strategy with cutting-edge technology for complete solutions.",
-      icon: Shield
-    },
-    {
-      title: "Small Business Focus",
-      description: "We understand the unique challenges facing founders and small teams.",
-      icon: UserCheck
-    },
-    {
-      title: "Practical Implementation",
-      description: "We deliver actionable, measurable solutions you can implement immediately.",
-      icon: Gauge
-    },
-    {
-      title: "Technology + Strategy",
-      description: "We provide expert guidance on both processes and technology.",
-      icon: Zap
-    }
-  ];
-
-  const commitments = [
-    "Right-sized solutions for your specific business needs",
-    "Focus on practical, measurable results",
-    "Empathetic understanding of founder challenges",
-    "Expert guidance through sales complexity",
-    "Continuous support and adaptation as you grow"
-  ];
-
-  return (
-    <>
+  const coreValues = [{
+    title: "Holistic Approach",
+    description: "We combine foundational sales strategy with cutting-edge technology for complete solutions.",
+    icon: Shield
+  }, {
+    title: "Small Business Focus",
+    description: "We understand the unique challenges facing founders and small teams.",
+    icon: UserCheck
+  }, {
+    title: "Practical Implementation",
+    description: "We deliver actionable, measurable solutions you can implement immediately.",
+    icon: Gauge
+  }, {
+    title: "Technology + Strategy",
+    description: "We provide expert guidance on both processes and technology.",
+    icon: Zap
+  }];
+  const commitments = ["Right-sized solutions for your specific business needs", "Focus on practical, measurable results", "Empathetic understanding of founder challenges", "Expert guidance through sales complexity", "Continuous support and adaptation as you grow"];
+  return <>
       <Helmet>
         <title>Why Choose Smart Sales Process | Our Approach</title>
         <meta name="description" content="Learn about our unique approach combining sales playbooks and AI automation to help founders and small businesses achieve sales success." />
       </Helmet>
       
-      <PageHeader
-        title="Your Partner in Building a High-Performing Sales Engine"
-        subtitle="Smart Sales Process offers a unique approach to sales enablement focused on the specific needs of founders and small businesses."
-      />
+      <PageHeader title="Your Partner in Building a High-Performing Sales Engine" subtitle="Smart Sales Process offers a unique approach to sales enablement focused on the specific needs of founders and small businesses." />
 
       <section className="section">
         <div className="container-custom">
@@ -137,21 +118,10 @@ const WhyUs = () => {
       
       <section className="section bg-gray-50">
         <div className="container-custom">
-          <SectionHeading
-            title="Our Unique Approach"
-            subtitle="We take a different approach to sales enablement that focuses on the specific needs of founders and small businesses."
-            centered
-          />
+          <SectionHeading title="Our Unique Approach" subtitle="We take a different approach to sales enablement that focuses on the specific needs of founders and small businesses." centered />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {coreValues.map((value, index) => (
-              <FeatureCard
-                key={index}
-                title={value.title}
-                description={value.description}
-                icon={value.icon}
-              />
-            ))}
+            {coreValues.map((value, index) => <FeatureCard key={index} title={value.title} description={value.description} icon={value.icon} />)}
           </div>
           
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 animate-on-scroll">
@@ -194,14 +164,12 @@ const WhyUs = () => {
                 <h3 className="text-2xl font-semibold mb-6">Our Commitment to You</h3>
                 
                 <ul className="space-y-4">
-                  {commitments.map((commitment, index) => (
-                    <li key={index} className="flex items-start">
+                  {commitments.map((commitment, index) => <li key={index} className="flex items-start">
                       <div className="bg-white/10 min-w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-1">
                         <CheckCircle className="text-white" size={14} />
                       </div>
                       <span>{commitment}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
                 
                 <div className="mt-8 pt-6 border-t border-teal-500/30">
@@ -209,12 +177,7 @@ const WhyUs = () => {
                   <p className="text-teal-50 mb-4">
                     We're committed to delivering real, measurable improvements in your sales performance.
                   </p>
-                  <a
-                    href="https://calendar.app.google/2LoDYSKqKkXFR9mU8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-teal-700 hover:bg-teal-50 font-medium py-2 px-4 rounded-md transition-colors duration-200"
-                  >
+                  <a href="https://calendar.app.google/2LoDYSKqKkXFR9mU8" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-teal-700 hover:bg-teal-50 font-medium py-2 px-4 rounded-md transition-colors duration-200">
                     Schedule a Consultation
                   </a>
                 </div>
@@ -226,17 +189,11 @@ const WhyUs = () => {
       
       <section className="section">
         <div className="container-custom">
-          <SectionHeading
-            title="Meet the Expert"
-            subtitle=""
-            centered
-          />
+          <SectionHeading title="Meet the Expert" subtitle="" centered />
           
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 animate-on-scroll">
             <div className="text-center mb-8">
-              <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4">
-                {/* Placeholder for founder/expert photo */}
-              </div>
+              
               <h3 className="text-2xl font-bold text-navy-900">Yon A. Vo</h3>
               <p className="text-navy-600">Founder & Lead Sales Strategist</p>
             </div>
@@ -296,14 +253,7 @@ const WhyUs = () => {
         </div>
       </section>
       
-      <CallToAction
-        title="Let's Discuss Your Sales Goals"
-        subtitle="Schedule a free consultation to explore how our unique approach can help transform your sales performance."
-        buttonText="Schedule a Free Consultation"
-        buttonLink="https://calendar.app.google/2LoDYSKqKkXFR9mU8"
-      />
-    </>
-  );
+      <CallToAction title="Let's Discuss Your Sales Goals" subtitle="Schedule a free consultation to explore how our unique approach can help transform your sales performance." buttonText="Schedule a Free Consultation" buttonLink="https://calendar.app.google/2LoDYSKqKkXFR9mU8" />
+    </>;
 };
-
 export default WhyUs;
