@@ -161,9 +161,9 @@ const Insights = () => {
         title="Stay Updated with Our Latest Insights"
         subtitle="Subscribe to our newsletter to receive the latest articles, tips, and resources directly in your inbox."
         buttonText="Subscribe Now"
-        buttonLink="https://smartsalesprocess.com/insights"
+        buttonLink="/contact"
         secondaryButtonText="Contact Us"
-        secondaryButtonLink="https://smartsalesprocess.com/contact"
+        secondaryButtonLink="/contact"
       />
     </>
   );
